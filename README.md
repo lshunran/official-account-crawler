@@ -8,6 +8,8 @@ how to use:
 
 clone
 
+install all dependencies
+
 cd official-account-crawler
 
 python crawler-web.py
