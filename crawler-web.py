@@ -23,16 +23,18 @@ class officialAccount:
         data = []
 
         i = web.input()
-
+        
         web.header('Content-Type', 'text/json; charset=utf-8', unique=True)
 
-        driver = webdriver.PhantomJS(executable_path='/Users/ashun/Downloads/phantomjs-2.1.1-macosx/bin/phantomjs')
+        driver = webdriver.PhantomJS(executable_path=[YOUR-PhantomJS-PATH])
 
-        driver.get('http://www.newrank.cn/public/info/detail.html?account=' + i.id)
+        # For example, In my Mac: driver = webdriver.PhantomJS(executable_path='/Users/ashun/Downloads/phantomjs-2.1.1-macosx/bin/phantomjs')
+        
+        driver.get('https://www.newrank.cn/public/info/detail.html?account=' + i.id)
 
-        wait = WebDriverWait(driver, 10)
+        wait = WebDriverWait(driver, 20)
 
-        wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'info-detail-article-wxtop')))
+        wait.until(EC.presence_of_element_located((By.ID, 'info_detail_article_top')))
 
         for title in driver.find_elements_by_css_selector('a.ellipsis'):
             print(title.get_attribute('title'))

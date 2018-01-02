@@ -12,6 +12,10 @@ install all dependencies
 
 cd official-account-crawler
 
+edit PhantomJS path in line 31 (replace [YOUR-PhantomJS-PATH] with specific path)
+
 python crawler-web.py
 
-http://0.0.0.0:8080?id=[YOUR-OFFICIAL-ACCOUNT-ID]
+http://0.0.0.0:8080/officialaccount?id=[YOUR-OFFICIAL-ACCOUNT-ID]
+ or
+http://localhost:8080/officialaccount?id=[YOUR-OFFICIAL-ACCOUNT-ID]
